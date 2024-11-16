@@ -1,0 +1,16 @@
+# WEBSITE URL
+ncd.dommehut.xyz {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
+    root * /usr/share/caddy
+    file_server
+}
+ 
+# REVERSE PROXY LIKE
+streaming.dommehut.xyz {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
+    reverse_proxy 10.3.9.76:8080
+}
